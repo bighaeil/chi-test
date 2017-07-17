@@ -41,3 +41,21 @@ $(window).scroll(function() {
     */
 
 });
+
+$(document).on('touchstart', function(e) {
+    $('#msg').html('터치가 시작되었어요.');
+    e.preventDefault();	//	이벤트취소
+});//swipe, swipeleft, swiperight 참고
+
+$(document).on('touchmove', function(e) {
+    var event = e.originalEvent;
+    $('#msg').html('touch 이벤트 중입니다.');
+    $('#msg').append('<div>' + event.touches[0].screenX
+        + ',' + event.touches[0].screenY + '</div>');
+    event.preventDefault();
+
+});
+
+$(document).on('touchend', function(e) {
+    $('#msg').append("<div>터치이벤트가 종료되었어요</div>");
+});
