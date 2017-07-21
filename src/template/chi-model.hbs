@@ -1,0 +1,14 @@
+<!-- content 안에 <br>(html 소스) 적용이 안된다. -> \{{{}}} 3개-->
+{{#each this~}}
+<li class="test-model">
+    <div class="model-title">{{title}}</div>
+    <div class="model-content">
+        <div class="model-img">
+            <img src="{{img}}">
+        </div>
+        <div class="model-content-text">
+            {{{content}}}
+        </div>
+    </div>
+</li>
+{{/each}}
